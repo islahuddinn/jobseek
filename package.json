@@ -2,8 +2,8 @@
   "name": "jobseek",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
+    "build": "node init && turbo run build",
+    "dev": "node init && turbo run dev",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "validate-pipeline": "pnpm --filter @jobseek/murmur-pipelines validate-pipeline",

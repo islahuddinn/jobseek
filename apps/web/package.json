@@ -3,9 +3,9 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "pnpm proxy-matchers:update && next dev",
-    "build": "pnpm blog-mentions:check && pnpm proxy-matchers:update && lingui compile && next build",
-    "start": "next start",
+    "dev": "node init && pnpm proxy-matchers:update && next dev",
+    "build": "node init && pnpm blog-mentions:check && pnpm proxy-matchers:update && lingui compile && next build",
+    "start": "node init && next start",
     "lint": "eslint .",
     "traffic:analyze": "tsx script/analyze-vercel-logs.ts",
     "traffic:api": "tsx script/report-api-traffic.ts",
@@ -44,7 +44,7 @@
     "typecheck": "next typegen && tsc",
     "test:company-reference": "vitest run --config vitest.company-reference.config.ts",
     "test:company-reference:browser": "pnpm compile && tsx scripts/test-company-reference-browser.ts",
-    "build:company-reference:rehearsal": "tsx scripts/build-company-reference-rehearsal.ts"
+    "build:company-reference:rehearsal": "node init && tsx scripts/build-company-reference-rehearsal.ts"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.8.13",
